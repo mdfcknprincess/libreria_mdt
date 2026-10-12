@@ -8,16 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Author extends Model
 {
     use HasFactory;
-    protected $fillable={
-        'name'
-        'nationality'
+    
+    protected $fillable = [
+        'name',
+        'nationality',
         'birth_date'
-    }
+    ];
+    
     public function books()
     {
         return $this->belongsToMany(Book::class, 'author_book','author_id','book_id');
-        
     }
-    
 }
-
