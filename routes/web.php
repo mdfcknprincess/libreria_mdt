@@ -2,19 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-//se generan todas las rutas asociadas al controlador CategoryController
-Route::resource('categories',CategoryController::class);
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\BookController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Se generan todas las rutas asociadas al controlador CategoryController
+Route::resource('categories', CategoryController::class);
+//Se generan todas las rutas asociadas al controlador AuthorController
+Route::resource('authors', AuthorController::class);
+//Se generan todas las rutas asociadas al controlador BookController
+Route::resource('books', BookController::class);
